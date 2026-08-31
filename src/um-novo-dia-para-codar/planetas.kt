@@ -9,10 +9,10 @@ fun main() {
         mutableListOf<String>("Mercúrio", "Vênus", "Terra", "Marte", "Júpiter", "Saturno", "Urano", "Netuno", "Plutão")
 
     while (continuar) {
-        println("Escolha um dos planetas!\n- ${planetas.joinToString("\n- ")}")
+        println("Essa é a lista atual dos planetas!\n- ${planetas.joinToString("\n- ")}")
 
-        var itemBusca: String = readln()
-        var itemBuscaFormatado = itemBusca.removerAcentos().lowercase().replaceFirstChar { it.uppercase() }
+        var itemBusca: String = readString("Escolha um deles: ", 1)
+        var itemBuscaFormatado = itemBusca.lowercase().replaceFirstChar { it.uppercase() }
         var itemSemAcentos = itemBuscaFormatado
 
         val indice = planetas.indexOfFirst { planeta -> planeta.removerAcentos().equals(itemSemAcentos, ignoreCase = true)}
